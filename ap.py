@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import seaborn as sns
 from PIL import Image
 
@@ -16,8 +17,19 @@ job_code = pd.read_excel('data/welfare_2015_codebook.xlsx',
 job_code.head()
 
 
-# 한글 폰트 지정
-plt.rc("font", family="Malgun Gothic")
+# 한글 폰트 지정 (Streamlit Cloud: NanumGothic, Windows: Malgun Gothic)
+import platform
+if platform.system() == "Windows":
+    plt.rc("font", family="Malgun Gothic")
+else:
+    # Streamlit Cloud (Linux) - 나눔고딕 사용
+    nanum_fonts = [f for f in fm.findSystemFonts() if "Nanum" in f or "nanum" in f]
+    if nanum_fonts:
+        fe = fm.FontEntry(fname=nanum_fonts[0], name="NanumGothic")
+        fm.fontManager.ttflist.insert(0, fe)
+        plt.rc("font", family="NanumGothic")
+    else:
+        plt.rc("font", family="DejaVu Sans")
 # 마이너스 기호 깨짐 방지
 plt.rcParams["axes.unicode_minus"] = False
 
