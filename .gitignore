@@ -1,0 +1,58 @@
+# 대용량 데이터 파일 제외 (루트 레벨만)
+/*.csv
+/*.xlsx
+
+# data 폴더 내 파일은 포함 (크기 작음)
+!data/
+!data/*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.env
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# 분석용 파이썬 스크립트 제외 (ap.py만 포함)
+(min BMD) ANOVA.py
+19세 이하 인원 수 확인용.py
+1차 전처리.py
+30% 결측 제거.py
+5% 양측절단 시각화.py
+8,9없앤 전처리.py
+ClusterBMD 기술통계.py
+Cluster별 22개 영양소 평균.py
+Cluster별 상위 영양소.py
+Cluster별 영양소 평균표.py
+Eigenvalue + Scree plot.py
+Factor score 계산.py
+K-means 군집분석.py
+Lumbar spine BMD 회귀분석.py
+Table4.py
+Total variance explained 계산 코드.py
+cluster 평균.py
+erd.py
+factor score 시각화.py
+figure4.py
+figure4.r
+id 정렬 코드.py
+kmo 검정bartlett검정.py
+model1.py
+model2.py
+model3.r
+sav csv 변환.py
+table6.py
+test.R
+total variance contribution ratio.py
+Figure3_factor_score_clusters.png
+lc350/
+*.ipynb
+*.r
+*.R
+*.txt
+*.sav
