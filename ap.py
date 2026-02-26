@@ -10,7 +10,7 @@ img = Image.open("image/sample.png")
 st.set_page_config(
     layout="wide", page_title="복지패널 데이터분석 시각화 대시보드", page_icon=img)
 
-job_code = pd.read_excel('D:\streamlit\data\welfare_2015_codebook.xlsx',
+job_code = pd.read_excel('data/welfare_2015_codebook.xlsx',
                          sheet_name = '직종코드')
 # job_list = pd.read_excel('D:\streamlit\data\welfare_2015_codebook.xlsx', sheet_name = 1)
 job_code.head()
